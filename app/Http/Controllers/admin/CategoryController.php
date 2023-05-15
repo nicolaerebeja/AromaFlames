@@ -44,7 +44,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Category $category)
     {
         //
     }
@@ -52,24 +52,34 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', compact('category'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Category $category)
     {
-        //
+        $data = [
+            'name' => $request->input('name'),
+        ];
+
+        $category->update($data);
+
+        return redirect()->route('category.index')->with('success', 'Categoria a fost actualizată cu succes!');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('description.index')->with('success', 'Produsul a fost șters cu succes!');
     }
 }
