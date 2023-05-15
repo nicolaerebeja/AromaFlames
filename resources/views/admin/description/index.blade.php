@@ -2,6 +2,12 @@
 @section('content')
     <a class="btn bg-gradient-warning mb-0" href="{{ route('description.create') }}">Create Description</a>
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
@@ -34,7 +40,7 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $des->id }}</p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{ $des->description }}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $des->name }}</p>
                                         </td>
                                         <td class="align-middle">
                                             <a href="{{ route('description.edit', $des->id) }}" class="btn btn-primary">Edit</a>

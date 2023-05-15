@@ -2,6 +2,12 @@
 @section('content')
     <a class="btn bg-gradient-warning mb-0" href="{{ route('category.create') }}">Create Category</a>
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">

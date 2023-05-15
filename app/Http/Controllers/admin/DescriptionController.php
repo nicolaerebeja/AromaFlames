@@ -32,11 +32,19 @@ class DescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            'description' => $request->input('name'),
-        ];
+        $validatedData = $request->validate([
+            'description' => 'required',
+            'name' => 'required',
+        ]);
 
-        Description::create($data);
+        // Creează un nou obiect Product cu datele validate
+        $description = new Description;
+        $description->description = $request->description;
+        $description->name = $request->name;
+
+
+        // Salvează noul produs în baza de date
+        $description->save();
 
         return redirect()->route('description.index');
     }
@@ -44,7 +52,7 @@ class DescriptionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Description $description)
     {
         //
     }
@@ -52,24 +60,38 @@ class DescriptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Description $description)
     {
-        //
+        return view('admin.description.edit', compact('description'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Description $description)
     {
-        //
+        $validatedData = $request->validate([
+            'description' => 'required',
+            'name' => 'required',
+        ]);
+
+        $description->description = $request->description;
+        $description->name = $request->name;
+
+        $description->save();
+
+        return redirect()->route('description.index')->with('success', 'Descrierea a fost actualizată cu succes!');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Description $description)
     {
-        //
+        $description->delete();
+
+        return redirect()->route('description.index')->with('success', 'Produsul a fost șters cu succes!');
     }
 }

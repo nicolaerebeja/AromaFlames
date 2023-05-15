@@ -26,6 +26,7 @@
     <link href="{{ asset('storage/admin/assets/css/material-dashboard.min.css') }} " rel="stylesheet"
           type="text/css">
 
+    @yield('style')
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -140,6 +141,7 @@
 <script src="{{ asset('storage/admin/assets/js/material-dashboard.min.js') }} "></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+@yield('script')
 
 </body>
 
