@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\DescriptionController;
 use App\Http\Controllers\admin\ProductController;
-use App\Http\Controllers\HomeProductController;
-
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +32,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('/product', ProductController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/description', DescriptionController::class);
+
+Route::get('/categorie-produs/{slug}', [CategoryProductController::class, 'index'])->name('categoryProduct');
+Route::get('/produs/{slug}', [HomeProductController::class, 'index'])->name('productView');
