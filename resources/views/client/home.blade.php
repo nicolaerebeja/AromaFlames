@@ -23,7 +23,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp"') }}"
+                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp') }}"
                          src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp') }}" alt="Shop Our New Collection"
                          alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">

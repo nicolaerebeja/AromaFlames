@@ -4,13 +4,13 @@
 <!-- belle/index.html   11 Nov 2019 12:16:10 GMT -->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>AromaFlames</title>
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('storage/client/assets/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('storage/client/assets/images/favicon.png') }}"/>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/plugins.css') }}">
     <!-- Bootstap CSS -->
@@ -22,7 +22,7 @@
 
 <body class="template-index belle template-index-belle">
 <div id="pre-loader">
-    <img src="{{ asset('storage/client/assets/images/loader.gif') }}" alt="Loading..." />
+    <img src="{{ asset('storage/client/assets/images/loader.gif') }}" alt="Loading..."/>
 </div>
 <div class="pageWrapper">
     <!--Search Form Drawer-->
@@ -47,7 +47,8 @@
                 <!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                     <a href="index.html">
-                        <img src="{{ asset('storage/client/assets/img/logo.png') }}" alt="AromaFlames" title="AromaFlames" style="max-width: 50%;"/>
+                        <img src="{{ asset('storage/client/assets/img/logo.png') }}" alt="AromaFlames"
+                             title="AromaFlames" style="max-width: 50%;"/>
                     </a>
                 </div>
                 <!--End Desktop Logo-->
@@ -63,15 +64,17 @@
                     <nav class="grid__item" id="AccessibleNav">
                         <!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                            <li class="lvl1"><a href="#">Home <i class="anm anm-angle-down-l"></i></a> </li>
-                            <li class="lvl1"><a href="#">Blog <i class="anm anm-angle-down-l"></i></a> </li>
+                            <li class="lvl1"><a href="#">Home <i class="anm anm-angle-down-l"></i></a></li>
+                            <li class="lvl1"><a href="#">Blog <i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1 parent dropdown"><a href="#">Shop <i class="anm anm-angle-down-l"></i></a>
                                 <ul class="dropdown">
-                                    <li><a href="blog-left-sidebar.html" class="site-nav">LUMÂNĂRI FORMĂ</a></li>
-                                    <li><a href="blog-right-sidebar.html" class="site-nav">LUMÂNĂRI ÎN RECIPIENT  </a></li>
-                                    <li><a href="blog-fullwidth.html" class="site-nav">MĂRTURII EVENIMENT</a></li>
-                                    <li><a href="blog-grid-view.html" class="site-nav">WAX MELTS</a></li>
-                                    <li><a href="blog-article.html" class="site-nav">CADOURI</a></li>
+
+                                    @foreach ($categories as $category)
+                                        <li><a href="{{ route('categoryProduct', str_replace(' ', '-', $category->name)) }}"
+                                               class="site-nav">{{ $category->name }}</a>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </li>
                             <li class="lvl1"><a href="#"><b>Contacte!</b> <i class="anm anm-angle-down-l"></i></a>
@@ -84,7 +87,8 @@
                 <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="{{ asset('storage/client/assets/img/logo.png') }}" alt="AromaFlames" title="AromaFlames" />
+                            <img src="{{ asset('storage/client/assets/img/logo.png') }}" alt="AromaFlames"
+                                 title="AromaFlames"/>
                         </a>
                     </div>
                 </div>
@@ -101,8 +105,9 @@
                             <ul class="mini-products-list">
                                 <li class="item">
                                     <a class="product-image" href="#">
-                                        <img src="{{ asset('storage/client/assets/images/product-images/cape-dress-1.jpg') }}"
-                                             alt="3/4 Sleeve Kimono Dress" title="" />
+                                        <img
+                                            src="{{ asset('storage/client/assets/images/product-images/cape-dress-1.jpg') }}"
+                                            alt="3/4 Sleeve Kimono Dress" title=""/>
                                     </a>
                                     <div class="product-details">
                                         <a href="#" class="remove"><i class="anm anm-times-l"
@@ -131,8 +136,9 @@
                                 </li>
                                 <li class="item">
                                     <a class="product-image" href="#">
-                                        <img src="{{ asset('storage/client/assets/images/product-images/cape-dress-2.jpg') }}"
-                                             alt="Elastic Waist Dress - Black / Small" title="" />
+                                        <img
+                                            src="{{ asset('storage/client/assets/images/product-images/cape-dress-2.jpg') }}"
+                                            alt="Elastic Waist Dress - Black / Small" title=""/>
                                     </a>
                                     <div class="product-details">
                                         <a href="#" class="remove"><i class="anm anm-times-l"
@@ -185,7 +191,7 @@
     <div class="mobile-nav-wrapper" role="navigation">
         <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
         <ul id="MobileNav" class="mobile-nav">
-            <li class="lvl1"><a href="index.html">Home </a> </li>
+            <li class="lvl1"><a href="index.html">Home </a></li>
             <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">SHOP <i class="anm anm-plus-l"></i></a>
                 <ul style="display: none;">
                     <li><a href="blog-left-sidebar.html" class="site-nav">LUMÂNĂRI FORMĂ</a></li>
@@ -195,7 +201,7 @@
                     <li><a href="blog-article.html" class="site-nav">CADOURI</a></li>
                 </ul>
             </li>
-            <li class="lvl1"><a href="blog-left-sidebar.html">Blog </a> </li>
+            <li class="lvl1"><a href="blog-left-sidebar.html">Blog </a></li>
             <li class="lvl1"><a href="#"><b>Contacte!</b></a>
             </li>
         </ul>
@@ -308,7 +314,8 @@
                         <!--Footer Copyright-->
                         <div
                             class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
-                            <span></span> <a href="aromaflames.shop">© Toate drepturile rezervate 2023 AromaFlames</a></div>
+                            <span></span> <a href="aromaflames.shop">© Toate drepturile rezervate 2023 AromaFlames</a>
+                        </div>
                         <!--End Footer Copyright-->
                         <!--Footer Payment Icon-->
                         <div
