@@ -15,7 +15,7 @@
                                 <h2 class="h1 mega-title slideshow__title">Lumânări artizanale unice</h2>
                                 <span class="mega-subtitle slideshow__subtitle">Descoperă colecția
                                             noastră</span>
-                                <span class="btn">Shop now</span>
+                                <span class="btn" onclick="window.open('{{ route('categoryProduct', 'Toate-Lumânările') }}')" >Shop now</span>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp"') }}"
+                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp') }}"
                          src="{{ asset('storage/client/assets/img/slideshow-banners/candle2.webp') }}" alt="Shop Our New Collection"
                          alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
@@ -32,7 +32,7 @@
                                 <h2 class="h1 mega-title slideshow__title">Stil si rafinament in flacara</h2>
                                 <span class="mega-subtitle slideshow__subtitle">Explorează lumanările
                                             noastre</span>
-                                <span class="btn">Shop now</span>
+                                <span class="btn" onclick="window.open('{{ route('categoryProduct', 'Toate-Lumânările') }}')">Shop now</span>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
+                        <a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/lumanari_in_recipent.webp') }}"
                                  src="{{ asset('storage/client/assets/img/collection/lumanari_in_recipent.webp') }}" alt="Hot"
                                  class="blur-up lazyloaded">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
+                        <a href="{{ route('categoryProduct', 'Lumânări-formă') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/lumanari_forma.webp') }}"
                                  src="{{ asset('storage/client/assets/img/collection/lumanari_forma.webp') }}" alt="Denim"
                                  class="blur-up ls-is-cached lazyloaded">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
+                        <a href="{{ route('categoryProduct', 'Cadouri') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/cadouri.webp') }}"
                                  src="{{ asset('storage/client/assets/img/collection/cadouri.webp') }}" alt="Summer"
                                  class="blur-up ls-is-cached lazyloaded">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
+                        <a href="{{ route('categoryProduct', 'Wax-Melts') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/wax_melts.webp') }}"
                                  src="{{ asset('storage/client/assets/img/collection/wax_melts.webp') }}" alt="Classic"
                                  class="blur-up lazyloaded">
@@ -145,7 +145,7 @@
                                     creatiile noastre aduc un strop de caldura si confort in casele oamenilor,
                                     si suntem mandri sa facem parte din momentele speciale din viata lor.</p>
                             </div>
-                            <a href="#" class="btn">Shop Now</a>
+                            <a href="{{ route('categoryProduct', 'Toate-Lumânările') }}" class="btn" >Shop Now</a>
                         </div>
                     </div>
                 </div>
