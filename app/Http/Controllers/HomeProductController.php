@@ -14,5 +14,6 @@ class HomeProductController extends Controller
         $product = Product::where('name', $productName)->first();
 
         return view('client.product', compact('product'));
+
     }
 }
