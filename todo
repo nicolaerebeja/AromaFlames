@@ -1,7 +1,5 @@
 
 
-customer:
-show + edit
 
 orders:
 crud

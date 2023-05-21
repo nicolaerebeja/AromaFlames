@@ -52,31 +52,46 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Customer $customer)
     {
-        //
+        return view('admin.customer.show', compact('customer'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Customer $customer)
     {
-        //
+        return view('admin.customer.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Customer $customer)
     {
-        //
+        // Actualizează câmpurile produsului cu datele primite în request
+        $customer->name = $request->name;
+        $customer->phone = $request->phone;
+        $customer->orders = $request->orders;
+        $customer->details = $request->details;
+        $customer->source = $request->source;
+        $customer->address = $request->address;
+        $customer->data_registered = Carbon::createFromFormat('d/m/Y', $request->data_registered)->format('Y-m-d');
+        $customer->sex = $request->sex;
+
+        // Salvează produsul actualizat în baza de date
+        $customer->save();
+
+        // Redirecționează utilizatorul către pagina de index a produselor sau la alta pagină relevantă
+        return redirect()->route('customer.index')->with('success', 'Clientul a fost actualizat cu succes!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Customer $customer)
     {
         //
     }

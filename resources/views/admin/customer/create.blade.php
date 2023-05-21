@@ -10,13 +10,13 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="input-group input-group-outline my-3">
+                        <div class="input-group input-group-outline my-3 is-filled">
                             <label class="form-label">Name</label>
                             <input name="name" type="text" class="form-control" >
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="input-group input-group-outline my-3">
+                        <div class="input-group input-group-outline my-3 is-filled">
                             <label class="form-label">Phone</label>
                             <input name="phone" type="text" class="form-control">
                         </div>
@@ -25,13 +25,13 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="input-group input-group-outline my-3">
+                        <div class="input-group input-group-outline my-3 is-filled">
                             <label class="form-label">Source</label>
                             <input name="source" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="input-group input-group-outline my-3">
+                        <div class="input-group input-group-outline my-3 is-filled">
                             <label class="form-label">Address</label>
                             <input name="address" type="text" class="form-control">
                         </div>
@@ -40,7 +40,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="input-group input-group-outline my-3">
+                        <div class="input-group input-group-outline my-3 is-filled">
                             <label class="form-label">Data Registred</label>
                             <input name="data_registered" type="text" class="form-control">
                         </div>
