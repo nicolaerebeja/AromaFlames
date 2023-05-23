@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> AF-Admin </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"/>
     <!-- Nucleo Icons -->
     <link href="{{ asset('storage/admin/assets/css/nucleo-icons.css') }} " rel="stylesheet"
           type="text/css">
@@ -54,9 +54,18 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('order.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">shopping_cart</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Orders</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('customer.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">group</i>
                     </div>
                     <span class="nav-link-text ms-1">Customers</span>
                 </a>
@@ -65,31 +74,35 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('product.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">category</i>
                     </div>
                     <span class="nav-link-text ms-1">Products</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('category.index') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Category</span>
+                <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white collapsed"
+                   aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+                    <i class="material-icons-round opacity-10">settings</i>
+                    <span class="nav-link-text ms-2 ps-1">Settings</span>
                 </a>
+                <div class="collapse" id="dashboardsExamples" style="">
+                    <ul class="nav ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="{{ route('category.index') }}">
+                                <span class="sidenav-mini-icon"> C </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Category </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="{{ route('description.index') }}">
+                                <span class="sidenav-mini-icon"> D </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Description </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('description.index') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Description</span>
-                </a>
-            </li>
-
-
         </ul>
 
     </div>

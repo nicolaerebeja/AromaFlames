@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\DescriptionController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\HomeController;
@@ -31,6 +32,7 @@ Route::resource('/product', ProductController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/description', DescriptionController::class);
 Route::resource('/customer', CustomerController::class);
+Route::resource('/order', OrderController::class);
 
 
 Route::get('/categorie-produs/{slug}', [CategoryProductController::class, 'index'])->name('categoryProduct');

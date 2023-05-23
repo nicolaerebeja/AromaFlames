@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -54,7 +55,8 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        return view('admin.customer.show', compact('customer'));
+        $orders = Order::where('client_id', $customer->id)->get();
+        return view('admin.customer.show', compact('customer', 'orders'));
 
     }
 

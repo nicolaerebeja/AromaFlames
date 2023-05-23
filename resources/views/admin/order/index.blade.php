@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <a class="btn bg-gradient-warning mb-0" href="{{ route('customer.create') }}">Create Customer</a>
+    <a class="btn bg-gradient-warning mb-0" href="{{ route('order.create') }}">Create Order</a>
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -15,30 +15,35 @@
         <table id="myTable" class="display mt-2">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Orders</th>
-                <th>Source</th>
-                <th>Address</th>
-                <th>Data Reg.</th>
-                <th>Sex</th>
+                <th>Client</th>
+                <th>Data</th>
+                <th>Delivery Date</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Is Paid</th>
+                <th>Is Shipped</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            @foreach($customers as $cust)
+            @foreach($orders as $order)
                 <tr>
-                    <td><a href="{{ route('customer.show', $cust->id) }}">{{ $cust->name }}</a></td>
-                    <td>{{ $cust->phone }}</td>
-                    <td>{{ $cust->orders }}</td>
-                    <td>{{ $cust->source }}</td>
-                    <td>{{ $cust->address }}</td>
-                    <td>{{ $cust->data_registered }}</td>
-                    <td>{{ $cust->sex }}</td>
+                    <td><a href="{{ route('order.show', $order->id) }}">{{ $order->customer->name }}</a></td>
+                    <td>{{ $order->order_date }}</td>
+                    <td>{{ $order->delivery_date }}</td>
+                    <td>{{ $order->order_type }}</td>
+                    <td>{{ $order->quantity }}</td>
+                    <td>{{ $order->price }}</td>
+                    <td>{{ $order->status }}</td>
+                    <td>{{ $order->is_paid ? 'true' : 'false' }}</td>
+                    <td>{{ $order->is_shipped ? 'true' : 'false' }}</td>
+
 
                     <td>
-                        <a href="{{ route('customer.edit', $cust->id) }}">Edit</a>
-                        <form action="{{ route('customer.destroy', $cust->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('order.edit', $order->id) }}">Edit</a>
+                        <form action="{{ route('order.destroy', $order->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit"
