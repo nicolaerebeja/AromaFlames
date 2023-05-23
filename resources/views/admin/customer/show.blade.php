@@ -27,20 +27,20 @@
             <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                 <div class="nav-wrapper position-relative end-0">
                     <ul class="nav nav-pills nav-fill p-1">
-                        {{--                        <li class="nav-item" role="presentation">--}}
-                        {{--                            <a class="nav-link mb-0 px-0 py-1 " href="/inbound?cliente={{cliente['ragioneSociale']}}"--}}
-                        {{--                               aria-selected="false">--}}
-                        {{--                                <i class="material-icons text-lg position-relative">phone</i>--}}
-                        {{--                                <span class="ms-1">Inbound</span>--}}
-                        {{--                            </a>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="nav-item" role="presentation">--}}
-                        {{--                            <a class="nav-link mb-0 px-0 py-1 " href="/email?cliente={{cliente['ragioneSociale']}}"--}}
-                        {{--                               aria-selected="false" tabindex="-1">--}}
-                        {{--                                <i class="material-icons text-lg position-relative">email</i>--}}
-                        {{--                                <span class="ms-1">Mail</span>--}}
-                        {{--                            </a>--}}
-                        {{--                        </li>--}}
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link mb-0 px-0 py-1 " href="{{ route('order.create') }}"
+                               aria-selected="false">
+                                <i class="material-icons text-lg position-relative">phone</i>
+                                <span class="ms-1">Create Order</span>
+                            </a>
+                        </li>
+{{--                        <li class="nav-item" role="presentation">--}}
+{{--                            <a class="nav-link mb-0 px-0 py-1 " href="/email?cliente={{cliente['ragioneSociale']}}"--}}
+{{--                               aria-selected="false" tabindex="-1">--}}
+{{--                                <i class="material-icons text-lg position-relative">email</i>--}}
+{{--                                <span class="ms-1">Mail</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                                 <h6 class="mb-0">Customer info</h6>
                             </div>
                             <div class="card-body p-3">
-                                <h6> Orders: 1 </h6>
-                                <h6> Total Amount: 340 Mdl </h6>
+                                <h6> Orders: {{ $orders->count() }} </h6>
+                                <h6> Total Amount: {{ $orders->sum('price') }} Mdl </h6>
                                 <hr class="dark horizontal">
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                         <h6 class="mb-0">Customer Data</h6>
                                     </div>
                                     <div class="col-md-8 text-end" id="editProfile">
-{{--                                        <a href="javascript:editProfile();" id="startEditProfile">--}}
+                                        {{--                                        <a href="javascript:editProfile();" id="startEditProfile">--}}
                                         <a href="{{ route('customer.edit', $customer->id) }}" id="startEditProfile">
                                             <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip"
                                                data-bs-placement="top" aria-hidden="true" aria-label="Edit Profile"
@@ -103,8 +103,10 @@
                                 </div>
                                 <div class="input-group input-group-outline is-valid is-filled mb-3">
                                     <label class="form-label">Data Reg.</label>
-                                    <input name="data_registered" type="text" class="form-control w-100" onfocus="focused(this)"
-                                           onfocusout="defocused(this)" value="{{ $customer->data_registered }}" disabled>
+                                    <input name="data_registered" type="text" class="form-control w-100"
+                                           onfocus="focused(this)"
+                                           onfocusout="defocused(this)" value="{{ $customer->data_registered }}"
+                                           disabled>
                                 </div>
                                 <div class="input-group input-group-outline is-valid is-filled mb-3">
                                     <label class="form-label">Sex</label>
@@ -124,12 +126,7 @@
                                 </div>
                             </div>
                             <div class="card-body p-3">
-{{--                                <div class="input-group input-group-outline is-valid is-filled mb-3">--}}
-{{--                                    <label class="form-label">test</label>--}}
-{{--                                    <input name="pin" type="text" class="form-control w-100" onfocus="focused(this)"--}}
-{{--                                           onfocusout="defocused(this)" value="" disabled>--}}
-{{--                                </div>--}}
-                            {!! $customer->details!!}
+                                {!! $customer->details!!}
 
                             </div>
 
@@ -139,7 +136,6 @@
             </form>
         </div>
     </div>
-
 
 
     <div class="container-fluid py-4">
@@ -157,58 +153,60 @@
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Nome
-                                    </th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Note
-                                    </th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Seriale
-                                    </th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Promiscuo
-                                    </th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Data
+                                    </th>
+                                    <th
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Status
+                                    </th>
+                                    <th
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Type
+                                    </th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Quantity
+                                    </th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Price
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                {{--                                                <h6 class="mb-0 text-sm">{{prodotto['nome']}}</h6>--}}
-                                                {{--                                                <p class="text-xs text-secondary mb-0">{{prodotto['descrizione']}}</p>--}}
+                                @foreach ($orders as $order)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$order->delivery_date}}</h6>
+                                                    <p class="text-xs text-secondary mb-0">{{$order->order_date }}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {{--                                        <p class="text-xs font-weight-bold mb-0">{{prodotto['note']}}</p>--}}
-                                    </td>
-                                    <td>
-                                        {{--                                        <p class="text-xs text-secondary mb-0">{{prodotto['seriale']}}</p>--}}
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span
-                                        {{--                                            class="badge badge-sm bg-gradient-secondary">{{prodotto['promiscuo']}}</span>--}}
-                                    </td>
-                                    <td class="align-middle text-center">
-                                        <span
-                                        {{--                                            class="text-secondary text-xs font-weight-bold">{{prodotto['data']}}</span>--}}
-                                    </td>
-                                    <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            Edit
-                                        </a>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{$order->status}}</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{$order->order_type}}</p>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span
+                                                class="badge badge-sm bg-gradient-secondary">{{$order->quantity}}</span>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <span
+                                                class="text-secondary text-xs font-weight-bold">{{$order->price}}</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="{{ route('order.edit', $order->id) }}">Edit</a>
+
+                                            <a href="{{ route('order.edit', $order->id) }}"
+                                               style="color: green">Show</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -26,4 +26,10 @@ class Customer extends Model
         return Carbon::createFromFormat('Y-m-d', $this->data_registered)->format('d/m/Y');
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'client_id', 'id');
+    }
+
+
 }
