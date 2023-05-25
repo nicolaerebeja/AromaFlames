@@ -134,6 +134,10 @@ class OrderController extends Controller
 
     public function destroy(Order $order)
     {
-        // Șterge o comandă din baza de date
+        // Șterge produsul din baza de date
+        $order->delete();
+
+        // Redirecționează utilizatorul către pagina de index a produselor sau la alta pagină relevantă
+        return redirect()->route('order.index')->with('success', 'Comanda a fost șters cu succes!');
     }
 }

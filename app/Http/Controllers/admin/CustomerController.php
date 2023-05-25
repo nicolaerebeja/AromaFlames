@@ -95,6 +95,9 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+
+        // Redirecționează utilizatorul către pagina de index a produselor sau la alta pagină relevantă
+        return redirect()->route('customer.index')->with('success', 'Clientul a fost șters cu succes!');
     }
 }
