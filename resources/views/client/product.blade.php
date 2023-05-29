@@ -6,8 +6,12 @@
             <!--Breadcrumb-->
             <div class="bredcrumbWrap">
                 <div class="container breadcrumbs">
-                    <a href="{{ route('index') }}" title="Back to the home page">Acasă</a><span
-                        aria-hidden="true">›</span><span>{{$product->name}}</span>
+                    <a href="{{ route('index') }}" title="Back to the home page">Acasă</a>
+                    <span aria-hidden="true">›</span>
+                    <span><a
+                            href="{{ route('categoryProduct', str_replace(' ', '-', $product->category->name)) }}"> {{$product->category->name}} </a></span>
+                    <span aria-hidden="true">›</span>
+                    <span>{{$product->name}}</span>
                 </div>
             </div>
             <!--End Breadcrumb-->
@@ -114,85 +118,77 @@
                                 <div class="product-single__description rte mb-3 mt-2">
                                     {!! $product->info !!}
                                 </div>
+
                                 <form method="post" action="http://annimexweb.com/cart/add"
                                       id="product_form_10508262282" accept-charset="UTF-8"
                                       class="product-form product-form-product-template hidedropdown"
                                       enctype="multipart/form-data">
 
+
                                     <div class="swatch clearfix swatch-1 option2 mt-3" data-option-index="1">
                                         <div class="product-form__item">
                                             <label class="header">PARFUM: <span
                                                     class="slVariant">No Selection</span></label>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Cafea
-                                                    cu lapte</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Capusuni</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Ciocolata</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Trandafir</label>
-                                            </div>
+
+                                            @foreach($productoption as $option)
+                                                @if(!empty($option) && $option->aroma && $option->stock > 0)
+                                                    <div data-value="{{$option->aroma}}" class="swatch-element aroma">
+                                                        <input class="swatchInput" id="swatch-1-{{$option->aroma}}"
+                                                               type="radio"
+                                                               name="aroma"
+                                                               value="{{$option->aroma}}">
+                                                        <label class="swatchLbl medium rectangle"
+                                                               for="swatch-1-{{$option->aroma}}"
+                                                               title="{{$option->aroma}}">{{$option->aroma}}</label>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+
                                         </div>
                                     </div>
 
                                     <div class="swatch clearfix swatch-1 option2 mt-3" data-option-index="1">
                                         <div class="product-form__item">
-                                            <label class="header">CULOARE: <span
+                                            <label class="header">Culoare: <span
                                                     class="slVariant">No Selection</span></label>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Alb</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Bej</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Albastra</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Roz</label>
-                                            </div>
+
+                                            @foreach($productoption as $option)
+                                                @if(!empty($option) && $option->color && $option->stock > 0)
+                                                    <div data-value="{{$option->color}}" class="swatch-element color">
+                                                        <input class="swatchInput" id="swatch-1-{{$option->color}}"
+                                                               type="radio"
+                                                               name="color"
+                                                               value="{{$option->color}}">
+                                                        <label class="swatchLbl medium rectangle"
+                                                               for="swatch-1-{{$option->color}}"
+                                                               title="{{$option->color}}">{{$option->color}}</label>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+
                                         </div>
                                     </div>
 
-                                    <div class="swatch clearfix swatch-1 option2 mt-3 mb-3" data-option-index="1">
+                                    <div class="swatch clearfix swatch-1 option2 mt-3" data-option-index="1">
                                         <div class="product-form__item">
-                                            <label class="header">APLICATII: <span
+                                            <label class="header">Aplicatii: <span
                                                     class="slVariant">No Selection</span></label>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Foita Argintie</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Foita Aurie</label>
-                                            </div>
-                                            <div data-value="XS" class="swatch-element">
-                                                <input class="swatchInput" id="swatch-1" type="radio" name="option-1"
-                                                       value="XS">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1" title="XS">Fara</label>
-                                            </div>
+
+                                            @foreach($productoption as $option)
+                                                @if(!empty($option) && $option->options && $option->stock > 0)
+                                                    <div data-value="{{$option->options}}"
+                                                         class="swatch-element options">
+                                                        <input class="swatchInput" id="swatch-1-{{$option->options}}"
+                                                               type="radio"
+                                                               name="options"
+                                                               value="{{$option->options}}">
+                                                        <label class="swatchLbl medium rectangle"
+                                                               for="swatch-1-{{$option->options}}"
+                                                               title="{{$option->options}}">{{$option->options}}</label>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+
                                         </div>
                                     </div>
 
@@ -210,6 +206,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="hidden" id="price" value="{{ $product->price - $product->sale }}">
+                                        <input type="hidden" id="items" value="">
                                         <div class="product-form__item--submit">
                                             <button type="button" name="add" class="btn product-form__cart-submit">
                                                 <span>Add to cart</span>
@@ -233,60 +231,69 @@
                     <!--Related Product Slider-->
                     <div class="related-product grid-products mt-4">
                         <header class="section-header">
-                            <h2 class="section-header__title text-center h2"><span>Produse similare</span></h2>
+                            <h1 class="section-header__title text-center h1"><span>Produse similare</span></h1>
                         </header>
                         <div class="productPageSlider">
-                            <div class="col-12 item">
-                                <!-- start product image -->
-                                <div class="product-image">
+                            @foreach ($relatedProducts as $product)
+                                <div class="col-12 item">
                                     <!-- start product image -->
-                                    <a href="#">
-                                        <!-- image -->
-                                        <img class="primary blur-up lazyload"
-                                             data-src="{{ asset('storage/client/assets/images/product-images/product-image1.jpg') }}"
-                                             src="{{ asset('storage/client/assets/images/product-images/product-image1.jpg') }}"
-                                             alt="image" title="product">
-                                        <!-- End image -->
-                                        <!-- Hover image -->
-                                        <img class="hover blur-up lazyload"
-                                             data-src="{{ asset('storage/client/assets/images/product-images/product-image1-1.jpg') }}"
-                                             src="{{ asset('storage/client/assets/images/product-images/product-image1-1.jpg') }}"
-                                             alt="image" title="product">
-                                        <!-- End hover image -->
-                                        <!-- product label -->
-                                        <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span>
-                                            <span class="lbl pr-label1">new</span></div>
-                                        <!-- End product label -->
-                                    </a>
+                                    <div class="product-image">
+                                        <!-- start product image -->
+                                        <a href="{{ route('productView', str_replace(' ', '-', $product->name)) }}">
+                                            <!-- image -->
+                                            <img class="primary blur-up lazyload"
+                                                 data-src="{{ asset($product->images) }}"
+                                                 src="{{ asset($product->images) }}"
+                                                 alt="image" title="product">
+                                            <!-- End image -->
+                                            <!-- Hover image -->
+                                            <img class="hover blur-up lazyload"
+                                                 data-src="{{ asset($product->images) }}"
+                                                 src="{{ asset($product->images) }}"
+                                                 alt="image" title="product">
+                                            <!-- End hover image -->
+                                            <!-- product label -->
+                                            @if ($product->sale > 0)
+                                                <div class="product-labels rectangular"><span class="lbl on-sale">{{ number_format($product->sale, 0) }} %</span>
+                                                </div>
+                                            @endif
+                                            <!-- End product label -->
+                                        </a>
+                                        <!-- end product image -->
+
+                                        <!-- Start product button -->
+                                        <form class="variants add" action="#"
+                                              onclick="window.location.href='{{ route('productView', str_replace(' ', '-', $product->name)) }}'"
+                                              method="post">
+                                            <button class="btn btn-addto-cart" type="button" tabindex="0">Selectează
+                                                opțiunile
+                                            </button>
+                                        </form>
+                                        <!-- end product button -->
+                                    </div>
                                     <!-- end product image -->
+                                    <!--start product details -->
+                                    <div class="product-details text-center">
+                                        <!-- product name -->
+                                        <div class="product-name">
+                                            <a href="#">{{ $product->name }}</a>
+                                        </div>
+                                        <!-- End product name -->
+                                        <!-- product price -->
+                                        <div class="product-price">
+                                            @if ($product->sale > 0)
+                                                <span class="old-price">{{ $product->price }} Mdl</span>
+                                                <span class="price">{{ $product->price - $product->sale }}.00 Mdl</span>
+                                            @else
+                                                <span class="price">{{ $product->price }} Mdl</span>
+                                            @endif
+                                        </div>
+                                        <!-- End product price -->
 
-                                    <!-- Start product button -->
-                                    <form class="variants add" action="#" onclick="window.location.href='cart.html'"
-                                          method="post">
-                                        <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options
-                                        </button>
-                                    </form>
-                                    <!-- end product button -->
-                                </div>
-                                <!-- end product image -->
-                                <!--start product details -->
-                                <div class="product-details text-center">
-                                    <!-- product name -->
-                                    <div class="product-name">
-                                        <a href="#">Edna Dress</a>
                                     </div>
-                                    <!-- End product name -->
-                                    <!-- product price -->
-                                    <div class="product-price">
-                                        <span class="old-price">$500.00</span>
-                                        <span class="price">$600.00</span>
-                                    </div>
-                                    <!-- End product price -->
-
+                                    <!-- End product details -->
                                 </div>
-                                <!-- End product details -->
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                     <!--End Related Product Slider-->
@@ -295,4 +302,12 @@
                 </div>
                 <!--#ProductSection-product-template-->
             </div>
+            @endsection
+
+            @section('script')
+                <script>
+
+
+
+                </script>
 @endsection

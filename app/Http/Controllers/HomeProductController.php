@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductOption;
 use Illuminate\Http\Request;
 
 class HomeProductController extends Controller
@@ -13,7 +14,14 @@ class HomeProductController extends Controller
 
         $product = Product::where('name', $productName)->first();
 
-        return view('client.product', compact('product'));
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->limit(4)
+            ->get();
+
+        $productoption = ProductOption::orderBy('id', 'desc')->get();
+
+        return view('client.product', compact('product', 'relatedProducts', 'productoption'));
 
     }
 }

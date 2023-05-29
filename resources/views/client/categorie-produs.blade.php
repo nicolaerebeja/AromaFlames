@@ -65,19 +65,21 @@
                                                      src="{{ asset($product->images) }}" alt="image" title="product"/>
                                                 <!-- End hover image -->
                                                 <!-- product label -->
-                                                <div class="product-labels"><span class="lbl on-sale">Sale</span></div>
+                                                @if ($product->sale > 0)
+                                                    <div class="product-labels"><span class="lbl on-sale">Sale</span></div>
+                                                @endif
                                                 <!-- End product label -->
                                             </a>
                                             <!-- end product image -->
 
                                             <!-- Start product button -->
 
-{{--                                            <form class="variants add" action="#"--}}
-{{--                                                  onclick="window.location.href='{{ route('productView', $product->name) }}'"--}}
-{{--                                                  method="post">--}}
-{{--                                                <button class="btn btn-addto-cart" type="button">Selectează opțiunile--}}
-{{--                                                </button>--}}
-{{--                                            </form>--}}
+                                            <form class="variants add" action="#"
+                                                  onclick="window.location.href='{{ route('productView', $product->name) }}'"
+                                                  method="post">
+                                                <button class="btn btn-addto-cart" type="button">Selectează opțiunile
+                                                </button>
+                                            </form>
                                             <!-- end product button -->
                                         </div>
                                         <!-- end product image -->
@@ -91,7 +93,12 @@
                                             <!-- End product name -->
                                             <!-- product price -->
                                             <div class="product-price">
-                                                <span class="price">{{ $product->price }} Mdl</span>
+                                                @if ($product->sale > 0)
+                                                    <span class="old-price">{{ $product->price }} Mdl</span>
+                                                    <span class="price">{{ $product->price - $product->sale }}.00 Mdl</span>
+                                                @else
+                                                    <span class="price">{{ $product->price }} Mdl</span>
+                                                @endif
                                             </div>
                                             <!-- End product price -->
 

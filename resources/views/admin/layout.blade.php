@@ -100,6 +100,12 @@
                                 <span class="sidenav-normal  ms-2  ps-1"> Description </span>
                             </a>
                         </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="{{ route('product_options.index') }}">
+                                <span class="sidenav-mini-icon"> P </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Product Options </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
