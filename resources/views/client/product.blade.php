@@ -16,7 +16,11 @@
             </div>
             <!--End Breadcrumb-->
 
+
             <div id="ProductSection-product-template" class="product-template__container prstyle2 container">
+
+
+
                 <!--#ProductSection-product-template-->
                 <div class="product-single product-single-1">
                     <div class="row">
@@ -207,7 +211,7 @@
                                             </div>
                                         </div>
                                         <input type="hidden" id="price" value="{{ $product->price - $product->sale }}">
-                                        <input type="hidden" id="items" value="">
+                                        <input type="hidden" id="items" value="1">
                                         <div class="product-form__item--submit">
                                             <button type="button" name="add" class="btn product-form__cart-submit">
                                                 <span>Add to cart</span>
