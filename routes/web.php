@@ -39,3 +39,5 @@ Route::resource('/product_options', ProductOptionController::class);
 
 Route::get('/categorie-produs/{slug}', [CategoryProductController::class, 'index'])->name('categoryProduct');
 Route::get('/produs/{slug}', [HomeProductController::class, 'index'])->name('productView');
+Route::view('/cos-de-cumparaturi', 'client.cart')->name('cartView');
+Route::view('/finalizare-comanda', 'client.checkout')->name('checkoutView');

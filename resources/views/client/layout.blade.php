@@ -100,7 +100,7 @@
                         <a href="#;" class="site-header__cart" title="Cart">
                             <i class="icon anm anm-bag-l"></i>
                             <span id="CartCount" class="site-header__cart-count"
-                                  data-cart-render="item_count">2</span>
+                                  data-cart-render="item_count">0</span>
                         </a>
                         <!--Minicart Popup-->
                         <div id="header-cart" class="block block-cart">
@@ -131,11 +131,6 @@
                                class="site-nav">{{ $category->name }}</a>
                         </li>
                     @endforeach
-{{--                    <li><a href="blog-left-sidebar.html" class="site-nav">LUMÂNĂRI FORMĂ</a></li>--}}
-{{--                    <li><a href="blog-right-sidebar.html" class="site-nav">LUMÂNĂRI ÎN RECIPIENT</a></li>--}}
-{{--                    <li><a href="blog-fullwidth.html" class="site-nav">MĂRTURII EVENIMENT</a></li>--}}
-{{--                    <li><a href="blog-grid-view.html" class="site-nav">WAX MELTS</a></li>--}}
-{{--                    <li><a href="blog-article.html" class="site-nav">CADOURI</a></li>--}}
                 </ul>
             </li>
             <li class="lvl1"><a href="{{ route('index') }}">Blog </a></li>
@@ -286,6 +281,12 @@
     <!-- End Newsletter Popup -->
 
     <!-- Including Jquery -->
+    <script !src="">
+        let cartUrl = '{{ route('cartView') }}';
+        let checkoutUrl = '{{ route('checkoutView') }}';
+
+    </script>
+
     <script src="{{ asset('storage/client/assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/vendor/jquery.cookie.js') }}"></script>
@@ -296,6 +297,8 @@
     <script src="{{ asset('storage/client/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/lazysizes.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/main.js') }}"></script>
+
+    <script src="{{ asset('storage/client/assets/js/cart.js') }}"></script>
 
     @yield('script')
 
