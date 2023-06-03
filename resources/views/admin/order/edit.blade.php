@@ -158,7 +158,7 @@
 
                 <div class="row mt-4">
                     <div class="actions ms-auto text-center">
-                        <button class="btn bg-gradient-warning mb-0" type="submit">Create Order</button>
+                        <button class="btn bg-gradient-warning mb-0" type="submit">Update Order</button>
                     </div>
                 </div>
             </form>
