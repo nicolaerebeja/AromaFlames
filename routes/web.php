@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\DescriptionController;
 use App\Http\Controllers\admin\OrderController;
+use App\Http\Controllers\admin\OrderRequestController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductOptionController;
 use App\Http\Controllers\CategoryProductController;
@@ -34,7 +35,9 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/description', DescriptionController::class);
 Route::resource('/customer', CustomerController::class);
 Route::resource('/order', OrderController::class);
-Route::resource('/product_options', ProductOptionController::class);
+Route::resource('/product-options', ProductOptionController::class);
+Route::resource('/order-request', OrderRequestController::class);
+Route::get('/create-from-request/{id}', [OrderController::class, 'createFromRequest'])->name('order.createFromRequest');
 
 
 Route::get('/categorie-produs/{slug}', [CategoryProductController::class, 'index'])->name('categoryProduct');

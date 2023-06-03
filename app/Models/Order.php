@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
+    public function orderRequest()
+    {
+        return $this->hasOne(OrderRequest::class);
+    }
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'client_id');

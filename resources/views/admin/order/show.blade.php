@@ -179,11 +179,77 @@
     </div>
 
 
-
-
-
-
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-4">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-warning shadow-warning border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Orders</h6>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quantity</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aroma</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Color</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Options</th>
+                                </tr>
+                                </thead>
+                                <tbody id="orderDetailsTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        var orderDetails = {!! $order->orderRequest->order_details !!};
+        var tableBody = document.getElementById('orderDetailsTable');
+
+        for (var key in orderDetails) {
+            if (orderDetails.hasOwnProperty(key)) {
+                var product = JSON.parse(orderDetails[key]);
+                var row = document.createElement('tr');
+
+                var productNameCell = document.createElement('td');
+                productNameCell.textContent = product.name;
+                row.appendChild(productNameCell);
+
+                var quantityCell = document.createElement('td');
+                quantityCell.textContent = product.quantity;
+                row.appendChild(quantityCell);
+
+                var priceCell = document.createElement('td');
+                priceCell.textContent = product.price;
+                row.appendChild(priceCell);
+
+                var aromaCell = document.createElement('td');
+                aromaCell.textContent = product.aroma;
+                row.appendChild(aromaCell);
+
+                var colorCell = document.createElement('td');
+                colorCell.textContent = product.color;
+                row.appendChild(colorCell);
+
+                var optionsCell = document.createElement('td');
+                optionsCell.textContent = product.options;
+                row.appendChild(optionsCell);
+
+                tableBody.appendChild(row);
+            }
+        }
+    </script>
+
+
 
 @endsection
 @section('script')

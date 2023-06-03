@@ -62,7 +62,8 @@
                                        required="">
                                 Sunt de acord cu termenii și condițiile</label>
                         </p>
-                        <a id="cartCheckout" class="btn btn--small-wide checkout"  href="{{ route('checkoutView') }}">Checkout</a>
+{{--                        <a id="cartCheckout" class="btn btn--small-wide checkout"  href="{{ route('checkoutView') }}">Checkout</a>--}}
+                        <button id="cartCheckout" class="btn btn--small-wide checkout" >Checkout</button>
                     </div>
 
                 </div>

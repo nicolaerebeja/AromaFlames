@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-    <a class="btn bg-gradient-warning mb-0" href="{{ route('product_options.create') }}">Create Product Options</a>
+    <a class="btn bg-gradient-warning mb-0" href="{{ route('product-options.create') }}">Create Product Options</a>
 
     @if (session('success'))
         <div class="alert alert-success">
@@ -50,7 +50,7 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $option->stock == 1 ? 'On Stock' : 'Not in Stock' }}</p>
                                         </td>
                                         <td class="align-middle">
-                                            <form action="{{ route('product_options.update', $option->id) }}" method="POST"
+                                            <form action="{{ route('product-options.update', $option->id) }}" method="POST"
                                                   style="display: inline-block;">
                                                 @csrf
                                                 @method('PUT')
@@ -58,7 +58,7 @@
                                                 <button type="submit" class="btn btn-sm btn-primary">{{ $option->stock == 0 ? 'On Stock' : 'Not in Stock' }}</button>
                                             </form>
 
-                                            <form action="{{ route('product_options.destroy', $option->id) }}" method="POST"
+                                            <form action="{{ route('product-options.destroy', $option->id) }}" method="POST"
                                                   style="display: inline-block;">
                                                 @csrf
                                                 @method('DELETE')
@@ -119,7 +119,7 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $option->stock == 1 ? 'On Stock' : 'Not in Stock' }}</p>
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{ route('product_options.update', $option->id) }}" method="POST"
+                                                <form action="{{ route('product-options.update', $option->id) }}" method="POST"
                                                       style="display: inline-block;">
                                                     @csrf
                                                     @method('PUT')
@@ -127,7 +127,7 @@
                                                     <button type="submit" class="btn btn-sm btn-primary">{{ $option->stock == 0 ? 'On Stock' : 'Not in Stock' }}</button>
                                                 </form>
 
-                                                <form action="{{ route('product_options.destroy', $option->id) }}" method="POST"
+                                                <form action="{{ route('product-options.destroy', $option->id) }}" method="POST"
                                                       style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
@@ -188,7 +188,7 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $option->stock == 1 ? 'On Stock' : 'Not in Stock' }}</p>
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{ route('product_options.update', $option->id) }}" method="POST"
+                                                <form action="{{ route('product-options.update', $option->id) }}" method="POST"
                                                       style="display: inline-block;">
                                                     @csrf
                                                     @method('PUT')
@@ -196,7 +196,7 @@
                                                     <button type="submit" class="btn btn-sm btn-primary">{{ $option->stock == 0 ? 'On Stock' : 'Not in Stock' }}</button>
                                                 </form>
 
-                                                <form action="{{ route('product_options.destroy', $option->id) }}" method="POST"
+                                                <form action="{{ route('product-options.destroy', $option->id) }}" method="POST"
                                                       style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')

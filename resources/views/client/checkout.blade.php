@@ -1,6 +1,25 @@
 @extends('client.layout')
 @section('content')
 
+    @if (session('success'))
+        <div id="page-content">
+            <!-- Lookbook Start -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="empty-page-content text-center">
+                            <h1>{{ session('success') }}</h1>
+                            <p><a href="{{ route('categoryProduct', 'Toate-Lumânările') }}" class="btn btn--has-icon-after">Continua cumparaturile <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Lookbook Start -->
+        </div>
+        <script !src="">
+            localStorage.clear();
+        </script>
+    @else
     <div id="page-content">
         <!--Page Title-->
         <div class="page section-header text-center">
@@ -9,7 +28,7 @@
             </div>
         </div>
         <!--End Page Title-->
-        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+        <form id="checkoutForm" action="{{ route('order-request.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="container">
                 <div class="row">
@@ -97,7 +116,7 @@
                                         </div>
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 ">
                                             <label for="input-telephone">Telefon *</label>
-                                            <input name="telephone" value="" id="input-telephone" type="tel" required>
+                                            <input name="phone" value="" id="input-telephone" type="tel" required>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -115,7 +134,7 @@
 
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 ">
                                             <label for="input-postcode">Oras *</label>
-                                            <input name="oras" value="" id="input-postcode" type="text" required>
+                                            <input name="city" value="" id="input-postcode" type="text" required>
                                         </div>
 
                                     </div>
@@ -123,11 +142,11 @@
                                     <div class="row">
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6">
                                             <label for="input-address-2">Strada *</label>
-                                            <input name="strada" value="" id="input-address-2" type="text" required>
+                                            <input name="street" value="" id="input-address-2" type="text" required>
                                         </div>
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 ">
                                             <label for="input-city">Nr. Apartament *</label>
-                                            <input name="apartament" value="" id="input-city" type="text" required>
+                                            <input name="apartment" value="" id="input-city" type="text" required>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -136,8 +155,8 @@
                                 <fieldset>
                                     <div class="row">
                                         <div class="form-group col-md-12 col-lg-12 col-xl-12">
-                                            <label for="input-company">Note pentru comandă *</label>
-                                            <textarea class="form-control resize-both" rows="3" required></textarea>
+                                            <label for="input-company">Note pentru comandă </label>
+                                            <textarea name="note" id="CartSpecialInstructions"  class="form-control resize-both" rows="3" ></textarea>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -148,6 +167,8 @@
                         <div class="your-order-payment">
                             <div class="your-order">
                                 <h2 class="order-title mb-4">Comanda ta</h2>
+
+                                <input type="hidden" name="order_details" id="localStorageData">
 
                                 <div class="table-responsive-sm order-table">
                                     <table class="bg-white table table-bordered table-hover text-center">
@@ -186,7 +207,7 @@
                                 <h2 class="payment-title mb-3">Modalitate de plată</h2>
                                 <div class="payment-method">
                                     <div class="form-group r">
-                                        <select name="country" id="input-country">
+                                        <select name="payment_method" id="input-country">
                                             <option value="numerar">Numerar la livrare</option>
                                             <option value="card">Plata cu cardul</option>
                                         </select>
@@ -210,5 +231,5 @@
             </div>
         </form>
     </div>
-
+    @endif
 @endsection

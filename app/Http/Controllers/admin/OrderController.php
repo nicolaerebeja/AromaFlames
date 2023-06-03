@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\OrderRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Models\Order;
@@ -140,4 +142,82 @@ class OrderController extends Controller
         // Redirecționează utilizatorul către pagina de index a produselor sau la alta pagină relevantă
         return redirect()->route('order.index')->with('success', 'Comanda a fost șters cu succes!');
     }
+
+    public function createFromRequest($id){
+        $orderRequest = OrderRequest::find($id);
+
+        $orderDetails = json_decode($orderRequest->order_details);
+        $total = $this->calculateTotal($orderDetails);
+
+        $customer = Customer::where('phone', $orderRequest->phone)->first();
+
+        if ($customer == null) {
+            $customer = $this->createNewCustomer($orderRequest);
+        }
+
+        $createdAt = Carbon::parse($orderRequest->created_at);
+        $delivery_date = $createdAt->addDays(5);
+
+        $order = new Order();
+        $order->order_date = $orderRequest->created_at;
+        $order->delivery_date = $delivery_date;
+        $order->client_id = $customer->id;
+        $order->order_type = "Request Order";
+        $order->quantity = $total['quantity'];
+        $order->aroma = '//';
+        $order->packaging = '//';
+        $order->details = 'Detalii: '.$orderRequest->order_notes;
+        $order->price = $total['price'];
+        $order->sale = 0;
+        $order->advance_amount = 0;
+        $order->status = 'assigned';
+        $order->payment_method = $orderRequest->payment_method;
+        $order->shipping_address = $orderRequest->street;
+        $order->is_paid = 0;
+        $order->is_shipped = 0;
+        $order->save();
+
+        $orderRequest->order_id = $order->id;
+        $orderRequest->save();
+
+        return redirect()->route('order.show', ['order' => $order])->with('success', 'Order created successfully.');
+
+    }
+    private function createNewCustomer($orderRequest)
+    {
+        $customer = new Customer;
+        $customer->name = $orderRequest->firstname . " " . $orderRequest->lastname;
+        $customer->phone = $orderRequest->phone;
+        $customer->details = "Client nou din Order Request";
+        $customer->source = "Website";
+        $customer->address = $orderRequest->street;
+        $customer->data_registered = $orderRequest->created_at;
+        $customer->sex = "woman";
+        $customer->save();
+
+        return $customer;
+    }
+
+    public function calculateTotal($orderDetails)
+    {
+        $totalQuantity = 0;
+        $totalPrice = 0;
+
+        foreach ($orderDetails as $key => $value) {
+            if (strpos($key, 'product') === 0) {
+                $product = json_decode($value);
+                $quantity = $product->quantity;
+                $price = $product->price;
+
+                $totalQuantity += $quantity;
+                $totalPrice += $quantity * $price;
+            }
+        }
+
+        return [
+            'quantity' => $totalQuantity,
+            'price' => $totalPrice,
+        ];
+    }
+
 }

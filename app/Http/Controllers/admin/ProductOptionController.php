@@ -14,7 +14,7 @@ class ProductOptionController extends Controller
     public function index()
     {
         $productoption = ProductOption::orderBy('id', 'desc')->get();
-        return view('admin.product_options.index', compact('productoption'));
+        return view('admin.product-options.index', compact('productoption'));
 
     }
 
@@ -23,7 +23,7 @@ class ProductOptionController extends Controller
      */
     public function create()
     {
-        return view('admin.product_options.create');
+        return view('admin.product-options.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class ProductOptionController extends Controller
 
         $productoption->save();
 
-        return redirect()->route('product_options.index');
+        return redirect()->route('product-options.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class ProductOptionController extends Controller
         $product_option->stock = $newStockValue;
         $product_option->save();
 
-        return redirect()->route('product_options.index')->with('success', 'Stock value updated successfully.');
+        return redirect()->route('product-options.index')->with('success', 'Stock value updated successfully.');
     }
 
 
@@ -94,6 +94,6 @@ class ProductOptionController extends Controller
     {
         $product_option->delete();
 
-        return redirect()->route('product_options.index')->with('success', 'Obtiunea a fost ștearsa cu succes!');
+        return redirect()->route('product-options.index')->with('success', 'Obtiunea a fost ștearsa cu succes!');
     }
 }

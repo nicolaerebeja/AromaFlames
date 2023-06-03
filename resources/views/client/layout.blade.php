@@ -121,7 +121,7 @@
         <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
         <ul id="MobileNav" class="mobile-nav">
             <li class="lvl1"><a href="{{ route('index') }}">Home </a></li>
-            <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">SHOP <i class="anm anm-plus-l"></i></a>
+            <li class="lvl1 parent megamenu"><a href="#">SHOP <i class="anm anm-plus-l"></i></a>
                 <ul style="display: none;">
                     <li><a href="{{ route('categoryProduct', 'Toate-Lumânările') }}"
                            class="site-nav">Toate Lumânările</a>

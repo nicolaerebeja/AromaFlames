@@ -63,6 +63,15 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('order-request.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">shopping_cart</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Order Requests</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('customer.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">group</i>
@@ -101,7 +110,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link text-white" href="{{ route('product_options.index') }}">
+                            <a class="nav-link text-white" href="{{ route('product-options.index') }}">
                                 <span class="sidenav-mini-icon"> P </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Product Options </span>
                             </a>
