@@ -9,8 +9,10 @@ use App\Models\OrderRequest;
 
 class DashboardController extends Controller
 {
+
     public function index()
     {
+
         $orderWithouotId = OrderRequest::where('order_id', null)->first();
         $statusCounts = $this->countOrdersByStatus();
         $orders = Order::orderBy('delivery_date', 'asc')->get();

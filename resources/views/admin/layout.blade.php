@@ -38,6 +38,7 @@
            aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="/" target="_blank">
             <!-- <span class="ms-1 font-weight-bold text-white">IT-Expert</span> -->
+            <img src="{{ asset('storage/client/assets/img/AF_logo_1280_white.png') }} " alt="" srcset="">
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -131,16 +132,16 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
 
-{{--                <div class="ms-md-auto pe-md-3 d-flex align-items-center">--}}
-{{--                    <div class="input-group input-group-outline">--}}
-{{--                        <label class="form-label">Search</label>--}}
-{{--                        <input type="text" class="form-control" name="searchInput" id="searchInput"--}}
-{{--                               onfocus="focused(this)" onfocusout="defocused(this)">--}}
-{{--                        <div class="input-group-append">--}}
-{{--                            <button class="btn btn-warning mb-0 " type="button" onclick="search()">Search</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                <div class="ms-md-auto pe-md-3 d-flex align-items-center">--}}
+                {{--                    <div class="input-group input-group-outline">--}}
+                {{--                        <label class="form-label">Search</label>--}}
+                {{--                        <input type="text" class="form-control" name="searchInput" id="searchInput"--}}
+                {{--                               onfocus="focused(this)" onfocusout="defocused(this)">--}}
+                {{--                        <div class="input-group-append">--}}
+                {{--                            <button class="btn btn-warning mb-0 " type="button" onclick="search()">Search</button>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
 
                 <ul class="navbar-nav  justify-content-end">
                     <!-- <li class="nav-item d-flex align-items-center">

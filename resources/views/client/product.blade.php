@@ -20,7 +20,6 @@
             <div id="ProductSection-product-template" class="product-template__container prstyle2 container">
 
 
-
                 <!--#ProductSection-product-template-->
                 <div class="product-single product-single-1">
                     <div class="row">
@@ -46,33 +45,34 @@
                             <div class="prFeatures">
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
-                                        <img src="{{ asset('storage/client/assets/images/credit-card.png') }}"
-                                             alt="Safe Payment" title="Safe Payment"/>
-                                        <div class="details"><h3>Safe Payment</h3>Pay with the world's most payment
-                                            methods.
+                                        {{--                                        <img src="{{ asset('storage/client/assets/images/credit-card.png') }}"--}}
+                                        {{--                                             alt="Safe Payment" title="LIVRARE GRATUITA"/>--}}
+                                        <div class="details"><h3>LIVRARE GRATUITA</h3> Livrare gratuită pentru orice
+                                            comandă cu valoare mai mare de 500 Mdl.
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
-                                        <img src="{{ asset('storage/client/assets/images/shield.png') }}"
-                                             alt="Confidence" title="Confidence"/>
-                                        <div class="details"><h3>Confidence</h3>Protection covers your purchase and
-                                            personal data.
+                                        {{--                                        <img src="{{ asset('storage/client/assets/images/shield.png') }}"--}}
+                                        {{--                                             alt="Confidence" title="Confidence"/>--}}
+                                        <div class="details"><h3>DREPT DE RETUR 14 ZILE </h3>Dacă vă răzgândiți, vă vom
+                                            schimba sau rambursa cu plăcere în 14 de zile de la cumpărare * exceptie fac
+                                            prod. personalizate.
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
-                                        <img src="{{ asset('storage/client/assets/images/worldwide.png') }}"
-                                             alt="Worldwide Delivery" title="Worldwide Delivery"/>
-                                        <div class="details"><h3>Worldwide Delivery</h3>FREE &amp; fast shipping to over
-                                            200+ countries &amp; regions.
+                                        {{--                                        <img src="{{ asset('storage/client/assets/images/worldwide.png') }}"--}}
+                                        {{--                                             alt="Worldwide Delivery" title="Worldwide Delivery"/>--}}
+                                        <div class="details"><h3>SUPORT TELEFONIC </h3> Puteți să obțineți răspunsuri
+                                            rapide și precise la întrebările dumneavoastră.
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
-                                        <img src="{{ asset('storage/client/assets/images/phone-call.png') }}"
-                                             alt="Hotline" title="Hotline"/>
-                                        <div class="details"><h3>Hotline</h3>Talk to help line for your question on 4141
-                                            456 789, 4125 666 888
-                                        </div>
-                                    </div>
+                                    {{--                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">--}}
+                                    {{--                                        <img src="{{ asset('storage/client/assets/images/phone-call.png') }}"--}}
+                                    {{--                                             alt="Hotline" title="Hotline"/>--}}
+                                    {{--                                        <div class="details"><h3>Hotline</h3>Talk to help line for your question on 4141--}}
+                                    {{--                                            456 789, 4125 666 888--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
                             <!--End Product Feature-->
@@ -310,7 +310,6 @@
 
             @section('script')
                 <script>
-
 
 
                 </script>

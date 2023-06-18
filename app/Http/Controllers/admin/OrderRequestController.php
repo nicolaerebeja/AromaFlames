@@ -5,9 +5,15 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\OrderRequest;
 use Illuminate\Http\Request;
+use Telegram\Bot\Api;
 
 class OrderRequestController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -57,6 +63,17 @@ class OrderRequestController extends Controller
         $orderRequest->order_details = $request->order_details;
 
         $orderRequest->save();
+
+        $telegram = new Api(config('services.telegram.bot_token'));
+        $chatId = '-1001936851334';
+        $message = 'New Order Request: '.$request->firstname." ".$request->lastname."\n";
+        $orderUrl = route('order-request.show', ['order_request' => $orderRequest->id]);
+        $message .= $orderUrl;
+
+        $response = $telegram->sendMessage([
+            'chat_id' => $chatId,
+            'text' => $message,
+        ]);
 
         return redirect()->route('checkoutView')->with('success', 'Comanda creată cu succes.');
     }

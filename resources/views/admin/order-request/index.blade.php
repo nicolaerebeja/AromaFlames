@@ -38,7 +38,7 @@
         $(document).ready(function () {
             $('#myTable').DataTable({
                 scrollY: 400,
-                scrollX: true,
+                // scrollX: true,
             });
         });
     </script>

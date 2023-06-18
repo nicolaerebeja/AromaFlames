@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\OrderRequestController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductOptionController;
+use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeProductController;
@@ -27,20 +28,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 //Route::get('/product', [HomeProductController::class, 'index'])->name('product');
-
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/product', ProductController::class);
-Route::resource('/category', CategoryController::class);
-Route::resource('/description', DescriptionController::class);
-Route::resource('/customer', CustomerController::class);
-Route::resource('/order', OrderController::class);
-Route::resource('/product-options', ProductOptionController::class);
-Route::resource('/order-request', OrderRequestController::class);
-Route::get('/create-from-request/{id}', [OrderController::class, 'createFromRequest'])->name('order.createFromRequest');
-
-
 Route::get('/categorie-produs/{slug}', [CategoryProductController::class, 'index'])->name('categoryProduct');
 Route::get('/produs/{slug}', [HomeProductController::class, 'index'])->name('productView');
 Route::view('/cos-de-cumparaturi', 'client.cart')->name('cartView');
 Route::view('/finalizare-comanda', 'client.checkout')->name('checkoutView');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::resource('/order-request', OrderRequestController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/product', ProductController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/description', DescriptionController::class);
+    Route::resource('/customer', CustomerController::class);
+    Route::resource('/order', OrderController::class);
+    Route::resource('/product-options', ProductOptionController::class);
+    Route::get('/create-from-request/{id}', [OrderController::class, 'createFromRequest'])->name('order.createFromRequest');
+});
+
+
