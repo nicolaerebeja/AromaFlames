@@ -38,6 +38,7 @@
            aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="/" target="_blank">
             <!-- <span class="ms-1 font-weight-bold text-white">IT-Expert</span> -->
+            <img src="{{ asset('storage/client/assets/img/AF_logo_1280_white.png') }} " alt="" srcset="">
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -45,7 +46,7 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="/">
+                <a class="nav-link text-white" href="{{ route('dashboard') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>
@@ -123,13 +124,43 @@
     </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
          data-scroll="true">
         <div class="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
 
             </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                {{--                <div class="ms-md-auto pe-md-3 d-flex align-items-center">--}}
+                {{--                    <div class="input-group input-group-outline">--}}
+                {{--                        <label class="form-label">Search</label>--}}
+                {{--                        <input type="text" class="form-control" name="searchInput" id="searchInput"--}}
+                {{--                               onfocus="focused(this)" onfocusout="defocused(this)">--}}
+                {{--                        <div class="input-group-append">--}}
+                {{--                            <button class="btn btn-warning mb-0 " type="button" onclick="search()">Search</button>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+
+                <ul class="navbar-nav  justify-content-end">
+                    <!-- <li class="nav-item d-flex align-items-center">
+                      <a href="/" class="nav-link text-body font-weight-bold px-0">
+                        <i class="fa fa-user me-sm-1"></i>
+                        <span class="d-sm-inline d-none">Profile</span>
+                      </a>
+                    </li> -->
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </nav>

@@ -212,7 +212,7 @@
     </div>
 
     <script>
-        var orderDetails = {!! $order->orderRequest->order_details !!};
+        var orderDetails = {!! $order->orderRequest ? $order->orderRequest->order_details : '{}' !!};
         var tableBody = document.getElementById('orderDetailsTable');
 
         for (var key in orderDetails) {

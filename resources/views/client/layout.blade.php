@@ -10,7 +10,12 @@
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('storage/client/assets/images/favicon.png') }}"/>
+{{--    <link rel="shortcut icon" href="{{ asset('storage/client/assets/images/favicon.png') }}"/>--}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('storage/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('storage/favicon/site.webmanifest') }}">
+
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/plugins.css') }}">
     <!-- Bootstap CSS -->
@@ -64,8 +69,8 @@
                     <nav class="grid__item" id="AccessibleNav">
                         <!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                            <li class="lvl1"><a href="{{ route('index') }}">Home <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1"><a href="{{ route('index') }}">Blog <i class="anm anm-angle-down-l"></i></a></li>
+                            <li class="lvl1"><a href="{{ route('index') }}">ACASĂ <i class="anm anm-angle-down-l"></i></a></li>
+{{--                            <li class="lvl1"><a href="{{ route('index') }}">Blog <i class="anm anm-angle-down-l"></i></a></li>--}}
                             <li class="lvl1 parent dropdown"><a href="#">Shop <i class="anm anm-angle-down-l"></i></a>
                                 <ul class="dropdown">
                                     <li><a href="{{ route('categoryProduct', 'Toate-Lumânările') }}"
@@ -79,8 +84,13 @@
 
                                 </ul>
                             </li>
-                            <li class="lvl1"><a href="#"><b>Contacte!</b> <i class="anm anm-angle-down-l"></i></a>
-                            </li>
+                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ<i class="anm anm-angle-down-l"></i></a></li>
+                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT<i class="anm anm-angle-down-l"></i></a></li>
+                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT<i class="anm anm-angle-down-l"></i></a></li>
+
+{{--                            <li class="lvl1"><a href="{{ route('index') }}">CADOURI<i class="anm anm-angle-down-l"></i></a></li>--}}
+{{--                            <li class="lvl1"><a href="#"><b>Contacte!</b> <i class="anm anm-angle-down-l"></i></a>--}}
+{{--                            </li>--}}
                         </ul>
                     </nav>
                     <!--End Desktop Menu-->
@@ -118,7 +128,7 @@
     <!--End Header-->
     <!--Mobile Menu-->
     <div class="mobile-nav-wrapper" role="navigation">
-        <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
+{{--        <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>--}}
         <ul id="MobileNav" class="mobile-nav">
             <li class="lvl1"><a href="{{ route('index') }}">Home </a></li>
             <li class="lvl1 parent megamenu"><a href="#">SHOP <i class="anm anm-plus-l"></i></a>
@@ -133,9 +143,14 @@
                     @endforeach
                 </ul>
             </li>
-            <li class="lvl1"><a href="{{ route('index') }}">Blog </a></li>
-            <li class="lvl1"><a href="#"><b>Contacte!</b></a>
-            </li>
+{{--            <li class="lvl1"><a href="{{ route('index') }}">Blog </a></li>--}}
+{{--            <li class="lvl1"><a href="#"><b>Contacte!</b></a></li>--}}
+
+            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ</a></li>
+            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT</a></li>
+            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT</a></li>
+            <li class="lvl1"><a href="{{ route('categoryProduct', 'Cadouri') }}">CADOURI</a></li>
+
         </ul>
     </div>
     <!--End Mobile Menu-->
