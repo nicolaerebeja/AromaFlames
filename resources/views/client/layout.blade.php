@@ -84,10 +84,10 @@
 
                                 </ul>
                             </li>
-                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ 1<i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ<i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT<i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT<i class="anm anm-angle-down-l"></i></a></li>
+{{--                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ 1<i class="anm anm-angle-down-l"></i></a></li>--}}
+{{--                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ<i class="anm anm-angle-down-l"></i></a></li>--}}
+{{--                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT<i class="anm anm-angle-down-l"></i></a></li>--}}
+{{--                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT<i class="anm anm-angle-down-l"></i></a></li>--}}
 
 {{--                            <li class="lvl1"><a href="{{ route('index') }}">CADOURI<i class="anm anm-angle-down-l"></i></a></li>--}}
 {{--                            <li class="lvl1"><a href="#"><b>Contacte!</b> <i class="anm anm-angle-down-l"></i></a>--}}
