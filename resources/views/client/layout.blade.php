@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
-<!-- belle/index.html   11 Nov 2019 12:16:10 GMT -->
+<html class="no-js" lang="ro">
 
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AromaFlames</title>
-    <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>AromaFlames</title>
+    <meta name="title" content="AromaFlames" />
+    <meta name="description" content="AromaFlames - Lumanări personalizate handmade din ceară de soia. Arome unice și rafinate. Comandați lumanări personalizate online." />
+    <meta name="keywords" content="lumanari personalizate, handmade, ceara soia, Moldova, Chisinau, arome, decoratiuni, cadouri, relaxare, experienta olfactiva, produse naturale, Online">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Romanian">
+    <meta name="revisit-after" content="5 days">
+    <meta name="author" content="AromaFlames">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dev.aromaflames.shop/" />
+    <meta property="og:title" content="AromaFlames" />
+    <meta property="og:description" content="AromaFlames - Lumanări personalizate handmade din ceară de soia. Arome unice și rafinate. Comandați lumanări personalizate online." />
+    <meta property="og:image" content="{{ asset('storage/client/assets/img/metatag.png') }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://dev.aromaflames.shop/" />
+    <meta property="twitter:title" content="AromaFlames" />
+    <meta property="twitter:description" content="AromaFlames - Lumanări personalizate handmade din ceară de soia. Arome unice și rafinate. Comandați lumanări personalizate online." />
+    <meta property="twitter:image" content="{{ asset('storage/client/assets/img/metatag.png') }}" />
+
     <!-- Favicon -->
-{{--    <link rel="shortcut icon" href="{{ asset('storage/client/assets/images/favicon.png') }}"/>--}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('storage/favicon/favicon-16x16.png') }}">
@@ -31,16 +53,16 @@
 </div>
 <div class="pageWrapper">
     <!--Search Form Drawer-->
-    <div class="search">
-        <div class="search__form">
-            <form class="search-bar__form" action="#">
-                <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
-                <input class="search__input" type="search" name="q" value="" placeholder="Search entire store..."
-                       aria-label="Search" autocomplete="off">
-            </form>
-            <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
-        </div>
-    </div>
+{{--    <div class="search">--}}
+{{--        <div class="search__form">--}}
+{{--            <form class="search-bar__form" action="#">--}}
+{{--                <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>--}}
+{{--                <input class="search__input" type="search" name="q" value="" placeholder="Search entire store..."--}}
+{{--                       aria-label="Search" autocomplete="off">--}}
+{{--            </form>--}}
+{{--            <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!--End Search Form Drawer-->
     <!--Header-->
     <!-- <div class="header-wrap classicHeader animated d-flex"> -->
@@ -84,7 +106,6 @@
 
                                 </ul>
                             </li>
-                            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ 1<i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ<i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT<i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT<i class="anm anm-angle-down-l"></i></a></li>
@@ -119,9 +140,9 @@
                         </div>
                         <!--EndMinicart Popup-->
                     </div>
-                    <div class="site-header__search">
-                        <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
-                    </div>
+{{--                    <div class="site-header__search">--}}
+{{--                        <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -189,15 +210,15 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 d-flex justify-content-end align-items-center">
                         <div class="footer-social">
                             <ul class="list--inline site-footer__social-icons social-icons">
-                                <li><a class="social-icons__link" href="#" target="_blank"
-                                       title="Belle Multipurpose Bootstrap 4 Template on Facebook"><i
+                                <li><a class="social-icons__link" href="https://www.facebook.com/AromaFlames" target="_blank"
+                                       title=" Facebook"><i
                                             class="icon icon-facebook"></i></a></li>
                                 <li><a class="social-icons__link" href="#" target="_blank"
-                                       title="Belle Multipurpose Bootstrap 4 Template on Pinterest"><i
+                                       title=" Pinterest"><i
                                             class="icon icon-pinterest"></i> <span
                                             class="icon__fallback-text">Pinterest</span></a></li>
-                                <li><a class="social-icons__link" href="#" target="_blank"
-                                       title="Belle Multipurpose Bootstrap 4 Template on Instagram"><i
+                                <li><a class="social-icons__link" href="https://www.instagram.com/aromaflames.shop/" target="_blank"
+                                       title=" Instagram"><i
                                             class="icon icon-instagram"></i> <span
                                             class="icon__fallback-text">Instagram</span></a></li>
 
@@ -215,30 +236,29 @@
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                             <h4 class="h4">Info</h4>
                             <ul>
-                                <li><a href="#">Plata și Livrare</a></li>
-                                <li><a href="#">Politica de retur produse</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ url('/plata-si-livrare') }}">Plata și Livrare</a></li>
+                                <li><a href="{{ url('/politica-de-retur-produse') }}">Politica de retur produse</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                             <h4 class="h4">Legal</h4>
                             <ul>
-                                <li><a href="#">Politica de confidențialitate</a></li>
-                                <li><a href="#">Politica de cookies</a></li>
-                                <li><a href="#">Termeni și condiții</a></li>
-                                <li><a href="#">ANPC</a></li>
-                                <li><a href="#">Login</a></li>
+                                <li><a href="{{ url('/politica-de-confidentialitate') }}">Politica de confidențialitate</a></li>
+                                <li><a href="{{ url('/politica-de-cookies') }}">Politica de cookies</a></li>
+                                <li><a href="{{ url('/termeni-si-conditii') }}">Termeni și condiții</a></li>
+                                <li><a href="{{ route('login') }}">Login</a></li>
                             </ul>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                            <h4 class="h4">Servicii pentru clienți</h4>
-                            <ul>
-                                <li><a href="#">Întrebări frecvente</a></li>
-                                <li><a href="#">Contactați-ne</a></li>
-                                <li><a href="#">Comenzi și retururi</a></li>
-                                <li><a href="#">Centrul de asistență</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">--}}
+{{--                            <h4 class="h4">Servicii pentru clienți</h4>--}}
+{{--                            <ul>--}}
+{{--                                <li><a href="#">Întrebări frecvente</a></li>--}}
+{{--                                <li><a href="#">Contactați-ne</a></li>--}}
+{{--                                <li><a href="#">Comenzi și retururi</a></li>--}}
+{{--                                <li><a href="#">Centrul de asistență</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
                             <h4 class="h4">Contactați-ne</h4>
                             <ul class="addressFooter">
@@ -266,17 +286,17 @@
                         </div>
                         <!--End Footer Copyright-->
                         <!--Footer Payment Icon-->
-                        <div
-                            class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
-                            <ul class="payment-icons list--inline">
-                                <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
-                                <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>
-                                <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>
-                                <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>
-                                <li><i class="icon fa fa-cc-amex" aria-hidden="true"></i></li>
-                                <li><i class="icon fa fa-credit-card" aria-hidden="true"></i></li>
-                            </ul>
-                        </div>
+{{--                        <div--}}
+{{--                            class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">--}}
+{{--                            <ul class="payment-icons list--inline">--}}
+{{--                                <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>--}}
+{{--                                <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>--}}
+{{--                                <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>--}}
+{{--                                <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>--}}
+{{--                                <li><i class="icon fa fa-cc-amex" aria-hidden="true"></i></li>--}}
+{{--                                <li><i class="icon fa fa-credit-card" aria-hidden="true"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                         <!--End Footer Payment Icon-->
                     </div>
                 </div>

@@ -187,7 +187,7 @@
                                         <tfoot class="font-weight-600">
                                         <tr>
                                             <td colspan="4" class="text-right">Livrare</td>
-                                            <td>50</td>
+                                            <td id="livrare"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="4" class="text-right">Total</td>

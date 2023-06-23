@@ -12,8 +12,8 @@
                 <div class="collection-hero__image">
                     <img class="blur-up lazyload"
                          data-src="{{ asset('storage/client/assets/img/shop-candles.webp') }} "
-                         src="{{ asset('storage/client/assets/img/shop-candles.webp') }}" alt="Women"
-                         title="Women"/>
+                         src="{{ asset('storage/client/assets/img/shop-candles.webp') }}" alt="shop-candles"
+                         title="shop-candles"/>
                 </div>
                 <div class="collection-hero__title-wrapper"><h1 class="collection-hero__title page-width">{{ $slug }}</h1></div>
             </div>
