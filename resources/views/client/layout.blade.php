@@ -152,26 +152,26 @@
     <div class="mobile-nav-wrapper" role="navigation">
 {{--        <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>--}}
         <ul id="MobileNav" class="mobile-nav">
-            <li class="lvl1"><a href="{{ route('index') }}">Home </a></li>
-            <li class="lvl1 parent megamenu"><a href="#">SHOP <i class="anm anm-plus-l"></i></a>
-                <ul style="display: none;">
-                    <li><a href="{{ route('categoryProduct', 'Toate-Lumânările') }}"
-                           class="site-nav">Toate Lumânările</a>
-                    </li>
-                    @foreach ($categories as $category)
-                        <li><a href="{{ route('categoryProduct', str_replace(' ', '-', $category->name)) }}"
-                               class="site-nav">{{ $category->name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </li>
-{{--            <li class="lvl1"><a href="{{ route('index') }}">Blog </a></li>--}}
-{{--            <li class="lvl1"><a href="#"><b>Contacte!</b></a></li>--}}
+            <li class="lvl1"><a href="{{ route('index') }}">ACASĂ </a></li>
+{{--            <li class="lvl1 parent megamenu"><a href="#">SHOP <i class="anm anm-plus-l"></i></a>--}}
+{{--                <ul style="display: none;">--}}
+{{--                    <li><a href="{{ route('categoryProduct', 'Toate-Lumânările') }}"--}}
+{{--                           class="site-nav">Toate Lumânările</a>--}}
+{{--                    </li>--}}
 
-            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ</a></li>
-            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT</a></li>
-            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT</a></li>
-            <li class="lvl1"><a href="{{ route('categoryProduct', 'Cadouri') }}">CADOURI</a></li>
+{{--                </ul>--}}
+{{--            </li>--}}
+
+            @foreach ($categories as $category)
+                <li class="lvl1"><a href="{{ route('categoryProduct', str_replace(' ', '-', $category->name)) }}"
+                       >{{ $category->name }}</a>
+                </li>
+            @endforeach
+
+{{--            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-formă') }}">LUMÂNĂRI FORMĂ</a></li>--}}
+{{--            <li class="lvl1"><a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}">LUMÂNĂRI ÎN RECIPIENT</a></li>--}}
+{{--            <li class="lvl1"><a href="{{ route('categoryProduct', 'Mărturii-eveniment') }}">MĂRTURII EVENIMENT</a></li>--}}
+{{--            <li class="lvl1"><a href="{{ route('categoryProduct', 'Cadouri') }}">CADOURI</a></li>--}}
 
         </ul>
     </div>
