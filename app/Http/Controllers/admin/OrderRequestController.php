@@ -45,7 +45,7 @@ class OrderRequestController extends Controller
             'city' => 'required',
             'street' => 'required',
             'apartment' => 'required',
-            'note' => 'required',
+            'note' => '',
             'payment_method' => 'required',
             'order_details' => 'required',
         ]);
