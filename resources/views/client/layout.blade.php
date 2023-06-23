@@ -45,6 +45,16 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/responsive.css') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K50QTJCJT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6K50QTJCJT');
+    </script>
 </head>
 
 <body class="template-index belle template-index-belle">
