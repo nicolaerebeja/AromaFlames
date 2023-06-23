@@ -6,9 +6,9 @@
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/bg1.webp') }}"
-                         src="{{ asset('storage/client/assets/img/slideshow-banners/bg1.webp') }}" alt="Shop Our New Collection"
-                         title="Shop Our New Collection" />
+                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/bg2.webp') }}"
+                         src="{{ asset('storage/client/assets/img/slideshow-banners/bg2.webp') }}" alt="Aromaflames New Collection"
+                         title="Aromaflames New Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                         <div class="slideshow__text-content bottom">
                             <div class="wrap-caption center">
@@ -23,9 +23,9 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/bg2.webp') }}"
-                         src="{{ asset('storage/client/assets/img/slideshow-banners/bg2.webp') }}" alt="Shop Our New Collection"
-                         alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload bg-img" data-src="{{ asset('storage/client/assets/img/slideshow-banners/bg1.webp') }}"
+                         src="{{ asset('storage/client/assets/img/slideshow-banners/bg1.webp') }}" alt="Aromaflames New Collection"
+                         alt="Aromaflames Collection" title="Aromaflames Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                         <div class="slideshow__text-content bottom">
                             <div class="wrap-caption center">
@@ -60,7 +60,7 @@
                     <div class="collection-grid-item">
                         <a href="{{ route('categoryProduct', 'Lumânări-în-recipient') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/lumanari_in_recipent.webp') }}"
-                                 src="{{ asset('storage/client/assets/img/collection/lumanari_in_recipent.webp') }}" alt="Hot"
+                                 src="{{ asset('storage/client/assets/img/collection/lumanari_in_recipent.webp') }}" alt="lumanari in recipient"
                                  class="blur-up lazyloaded">
                             <div class="collection-grid-item__title-wrapper">
                                 <h3 class="collection-grid-item__title btn btn--secondary no-border">LUMÂNĂRI ÎN
@@ -73,7 +73,7 @@
                     <div class="collection-grid-item">
                         <a href="{{ route('categoryProduct', 'Lumânări-formă') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/lumanari_forma.webp') }}"
-                                 src="{{ asset('storage/client/assets/img/collection/lumanari_forma.webp') }}" alt="Denim"
+                                 src="{{ asset('storage/client/assets/img/collection/lumanari_forma.webp') }}" alt="lumanari forma"
                                  class="blur-up ls-is-cached lazyloaded">
                             <div class="collection-grid-item__title-wrapper">
                                 <h3 class="collection-grid-item__title btn btn--secondary no-border">LUMÂNĂRI
@@ -86,7 +86,7 @@
                     <div class="collection-grid-item">
                         <a href="{{ route('categoryProduct', 'Cadouri') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/cadouri.webp') }}"
-                                 src="{{ asset('storage/client/assets/img/collection/cadouri.webp') }}" alt="Summer"
+                                 src="{{ asset('storage/client/assets/img/collection/cadouri.webp') }}" alt="cadouri"
                                  class="blur-up ls-is-cached lazyloaded">
                             <div class="collection-grid-item__title-wrapper">
                                 <h3 class="collection-grid-item__title btn btn--secondary no-border">CADOURI
@@ -99,7 +99,7 @@
                     <div class="collection-grid-item">
                         <a href="{{ route('categoryProduct', 'Wax-Melts') }}" class="collection-grid-item__link">
                             <img data-src="{{ asset('storage/client/assets/img/collection/wax_melts.webp') }}"
-                                 src="{{ asset('storage/client/assets/img/collection/wax_melts.webp') }}" alt="Classic"
+                                 src="{{ asset('storage/client/assets/img/collection/wax_melts.webp') }}" alt="wax melts"
                                  class="blur-up lazyloaded">
                             <div class="collection-grid-item__title-wrapper">
                                 <h3 class="collection-grid-item__title btn btn--secondary no-border">Wax Melts
@@ -128,8 +128,8 @@
 
                 <div class="feature-row ml-3 mr-3">
                     <div class="col-12 col-sm-12 col-md-6 feature-row__item">
-                        <img src="{{ asset('storage/client/assets/img/despre_af.webp') }}" alt="Fast Fashion Only available at BElle"
-                             title="Fast Fashion Only available at BElle">
+                        <img src="{{ asset('storage/client/assets/img/despre_af.webp') }}" alt="despre Aromaflames"
+                             title="despre Aromaflames">
                     </div>
                     <div
                         class="col-12 col-sm-12 col-md-6 feature-row__item feature-row__text feature-row__text--left text-left">

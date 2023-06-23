@@ -39,6 +39,15 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::resource('/order-request', OrderRequestController::class);
 
+Route::get('/plata-si-livrare', function () { return view('legal/plata-si-livrare'); });
+Route::get('/politica-de-retur-produse', function () { return view('legal/politica-de-retur-produse'); });
+Route::get('/contact', function () { return view('legal/contact'); });
+Route::get('/politica-de-confidentialitate', function () { return view('legal/politica-de-confidentialitate'); });
+Route::get('/politica-de-cookies', function () { return view('legal/politica-de-cookies'); });
+Route::get('/termeni-si-conditii', function () { return view('legal/termeni-si-conditii'); });
+
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/product', ProductController::class);

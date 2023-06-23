@@ -6,7 +6,7 @@
             <!--Breadcrumb-->
             <div class="bredcrumbWrap">
                 <div class="container breadcrumbs">
-                    <a href="{{ route('index') }}" title="Back to the home page">Acasă</a>
+                    <a href="{{ route('index') }}" title="acasa">Acasă</a>
                     <span aria-hidden="true">›</span>
                     <span><a
                             href="{{ route('categoryProduct', str_replace(' ', '-', $product->category->name)) }}"> {{$product->category->name}} </a></span>
@@ -29,7 +29,7 @@
                                     <div class="zoompro-span">
                                         <img class="blur-up lazyload zoompro"
                                              data-zoom-image="{{ asset($product->images) }}"
-                                             alt=""
+                                             alt="aromaflames image"
                                              src="{{ asset($product->images) }}"/>
                                     </div>
                                     @if ($product->sale > 0)
@@ -80,10 +80,6 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="product-single__meta">
                                 <h1 class="product-single__title">{{$product->name}}</h1>
-                                <div class="product-nav clearfix">
-                                    <a href="#" class="next" title="Next"><i class="fa fa-angle-right"
-                                                                             aria-hidden="true"></i></a>
-                                </div>
                                 <div class="prInfoRow">
                                     @if ($product->stock > 0)
                                         <div class="product-stock">

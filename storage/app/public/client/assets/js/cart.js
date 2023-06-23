@@ -171,7 +171,18 @@ function updateCartSubtotal() {
     if (subtotalElement) {
         subtotalElement.textContent = subtotal.toFixed(2) + ' Mdl';
         try{document.getElementById('subtotal').textContent = subtotal.toFixed(2) + ' Mdl';}catch (e) {}
-        try{document.getElementById('totalCheckout').textContent = (subtotal+50) ;}catch (e) {}
+        try{
+            if(subtotal>500 == true){
+                document.getElementById('totalCheckout').textContent = (subtotal);
+                document.getElementById('livrare').textContent = '0';
+            }else {
+                document.getElementById('totalCheckout').textContent = (subtotal+50) ;
+                document.getElementById('livrare').textContent = '50';
+
+            }
+
+            }catch (e) {}
+        // try{document.getElementById('totalCheckout').textContent = (subtotal+50) ;}catch (e) {}
 
 
     }
