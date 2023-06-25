@@ -3,7 +3,7 @@
     <div class="card card-frame">
         <h3 class="mt-3 mb-0 text-center">New Product Options</h3>
         <div class="card-body">
-            <form action="{{ route('product_options.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('product-options.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-12">
