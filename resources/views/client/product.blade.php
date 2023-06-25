@@ -119,16 +119,26 @@
                                     {!! $product->info !!}
                                 </div>
 
-                                <form method="post" action="http://annimexweb.com/cart/add"
-                                      id="product_form_10508262282" accept-charset="UTF-8"
-                                      class="product-form product-form-product-template hidedropdown"
-                                      enctype="multipart/form-data">
+{{--                                <form method="post" action="http://annimexweb.com/cart/add"--}}
+{{--                                      id="product_form_10508262282" accept-charset="UTF-8"--}}
+{{--                                      class="product-form product-form-product-template hidedropdown"--}}
+{{--                                      enctype="multipart/form-data">--}}
+                                <div class="product-form product-form-product-template hidedropdown">
 
+                                    <input type="hidden" id="gm" value="{{ $product->grams  }}">
+                                    <input type="hidden" id="productImage" value="{{ $product->images  }}">
 
                                     <div class="swatch clearfix swatch-1 option2 mt-3" data-option-index="1">
                                         <div class="product-form__item">
                                             <label class="header">PARFUM: <span
                                                     class="slVariant">No Selection</span></label>
+
+                                            <div data-value="Fara" class="swatch-element aroma">
+                                                <input class="swatchInput" id="swatch-1-Fara-aroma" type="radio"
+                                                       name="aroma" value="Fara">
+                                                <label class="swatchLbl medium rectangle" for="swatch-1-Fara-aroma"
+                                                       title="Fara">Fara</label>
+                                            </div>
 
                                             @foreach($productoption as $option)
                                                 @if(!empty($option) && $option->aroma && $option->stock > 0)
@@ -152,6 +162,13 @@
                                             <label class="header">Culoare: <span
                                                     class="slVariant">No Selection</span></label>
 
+                                            <div data-value="Fara" class="swatch-element color">
+                                                <input class="swatchInput" id="swatch-1-Fara-color" type="radio"
+                                                       name="color" value="Fara">
+                                                <label class="swatchLbl medium rectangle" for="swatch-1-Fara-color"
+                                                       title="Fara">Fara</label>
+                                            </div>
+
                                             @foreach($productoption as $option)
                                                 @if(!empty($option) && $option->color && $option->stock > 0)
                                                     <div data-value="{{$option->color}}" class="swatch-element color">
@@ -174,6 +191,13 @@
                                             <label class="header">Aplicatii: <span
                                                     class="slVariant">No Selection</span></label>
 
+                                            <div data-value="Fara" class="swatch-element options">
+                                                <input class="swatchInput" id="swatch-1-Fara-options" type="radio"
+                                                       name="options" value="Fara">
+                                                <label class="swatchLbl medium rectangle" for="swatch-1-Fara-options"
+                                                       title="Fara">Fara</label>
+                                            </div>
+
                                             @foreach($productoption as $option)
                                                 @if(!empty($option) && $option->options && $option->stock > 0)
                                                     <div data-value="{{$option->options}}"
@@ -184,7 +208,7 @@
                                                                value="{{$option->options}}">
                                                         <label class="swatchLbl medium rectangle"
                                                                for="swatch-1-{{$option->options}}"
-                                                               title="{{$option->options}}">{{$option->options}}</label>
+                                                               title="{{$option->options}}test">{{$option->options}}</label>
                                                     </div>
                                                 @endif
                                             @endforeach
@@ -214,8 +238,11 @@
                                             </button>
                                         </div>
                                     </div>
+
                                     <!-- End Product Action -->
-                                </form>
+                                </div>
+
+                                {{--                                </form>--}}
                             </div>
                             <!--Product Tabs-->
                             <div id="tab1" class="tab-content">

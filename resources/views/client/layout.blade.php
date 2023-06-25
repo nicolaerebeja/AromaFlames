@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/plugins.css') }}">
     <!-- Bootstap CSS -->
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/bootstrap.min.css') }}">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/client/assets/css/responsive.css') }}">
@@ -343,6 +345,8 @@
     <script src="{{ asset('storage/client/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/lazysizes.js') }}"></script>
     <script src="{{ asset('storage/client/assets/js/main.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 
     <script src="{{ asset('storage/client/assets/js/cart.js') }}"></script>
 

@@ -3,7 +3,14 @@
 
 
 
--> cand adaugi parfum/culoare/aplicatii sa creasca pretul
--> cand introduci numarul de elemente manual sa se actualizeze
--> de modificat livrarea, daca pretul e peste 500mdl atunci sa fie free
+-> cand introduci numarul de elemente manual sa se actualizeze  -> ok
+-> de modificat livrarea, daca pretul e peste 500mdl atunci sa fie free  -> ok
 -> de mai adaugat 3 poze dedesubt
+
+
+
+-> cand adaugi parfum/culoare/aplicatii sa creasca pretul   -> ok
+
+-> de modificat din diactritice in caractere normale
+
+-> pe cpanel de facut u httacces care face redirect la dev
