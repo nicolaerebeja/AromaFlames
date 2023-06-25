@@ -266,7 +266,7 @@ function addOptions() {
     var gm = document.getElementById('gm').value
 
     var swatchElementsAroma = document.getElementsByClassName('aroma');
-    var aromaGmMdl = (gm * 0.1)*3
+    var aromaGmMdl = (gm * 0.05)*3
 
     for (var i = 0; i < swatchElementsAroma.length; i++) {
         swatchElementsAroma[i].addEventListener('click', function () {
@@ -284,7 +284,7 @@ function addOptions() {
     }
 
     var swatchElementsColor = document.getElementsByClassName('color');
-    var colorGmMdl = (gm * 0.1)*3.5;
+    var colorGmMdl = (gm * 0.05)*3.5;
 
     for (var i = 0; i < swatchElementsColor.length; i++) {
         swatchElementsColor[i].addEventListener('click', function () {
