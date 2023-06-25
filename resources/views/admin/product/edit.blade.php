@@ -59,7 +59,7 @@
                             <input name="price" type="number" class="form-control" value="{{$product->price}}" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label class="form-label">Sale %</label>
+                            <label class="form-label">Sale</label>
                             <input name="sale" type="number" class="form-control" value="{{$product->sale}}" required>
                         </div>
 
@@ -67,6 +67,10 @@
                     <div class="col-sm-6">
                         <div class="input-group input-group-outline my-3">
                             <input type="file" name="image" class="form-control" >
+                        </div>
+                        <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Grams</label>
+                            <input name="grams" type="number" class="form-control" value="{{$product->grams}}" required>
                         </div>
                     </div>
 
