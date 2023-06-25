@@ -199,13 +199,14 @@ displayCartProducts();
 function addToCart() {
     let addToCartButton = document.querySelector('.btn.product-form__cart-submit');
     addToCartButton.addEventListener('click', function () {
-        let price = document.getElementById('price').value;
+        let price = getPrice();
         let name = document.querySelector('.product-single__title').innerHTML;
-        let quantity = document.getElementById('items').value;
-        let image = document.querySelector('.blur-up.zoompro.ls-is-cached.lazyloaded').src;
-        let aroma = document.getElementsByClassName('slVariant')[0].innerHTML
-        let color = document.getElementsByClassName('slVariant')[1].innerHTML
-        let options = document.getElementsByClassName('slVariant')[2].innerHTML
+        // let quantity = document.getElementById('items').value;
+        let quantity = document.getElementById('Quantity').value;
+        let image = window.location.origin + '/' + document.getElementById('productImage').value;
+        let aroma = document.getElementsByClassName('slVariant')[0].innerText.toLocaleLowerCase()
+        let color = document.getElementsByClassName('slVariant')[1].innerText.toLocaleLowerCase()
+        let options = document.getElementsByClassName('slVariant')[2].innerText.toLocaleLowerCase()
 
         function verifyKey(productsStorage) {
             var testKey = 'product' + (productsStorage + 1);
@@ -233,20 +234,26 @@ function addToCart() {
         }));
 
         // Afisarea mesajului de succes
-        let successMessage = document.createElement('div');
-        successMessage.classList.add('alert', 'alert-success', 'text-uppercase');
-        successMessage.setAttribute('role', 'alert');
-        successMessage.innerHTML = '<i class="icon anm anm-check icon-large"></i> &nbsp;<strong>' + quantity + ' × "' + name + '"</strong> au fost adăugate în coș!';
-        document.getElementById('ProductSection-product-template').insertBefore(successMessage, document.getElementById('ProductSection-product-template').firstChild);
-
-        // Ascunderea mesajului după 10 secunde
-        setTimeout(function () {
-            successMessage.style.display = 'none';
-        }, 10000);
+        var message = '<strong>' + quantity + ' × "' + name + '"</strong> au fost adăugate în coș!';
+        toastrSuccess(message);
 
         displayCartProducts();
 
     });
+
+    function getPrice(){
+        var orgPrice = document.getElementById('price').value;
+        var slVariants = document.getElementsByClassName('slVariant');
+        var sum = 0;
+
+        for (var i = 0; i < slVariants.length; i++) {
+            var value = parseInt(slVariants[i].value);
+            if (!isNaN(value)) {
+                sum += value;
+            }
+        }
+        return Number(orgPrice) + sum;
+    }
 }
 
 try {
@@ -256,38 +263,62 @@ try {
 
 
 function addOptions() {
+    var gm = document.getElementById('gm').value
+
     var swatchElementsAroma = document.getElementsByClassName('aroma');
+    var aromaGmMdl = (gm * 0.1)*3
 
     for (var i = 0; i < swatchElementsAroma.length; i++) {
         swatchElementsAroma[i].addEventListener('click', function () {
             var value = this.dataset.value;
 
             var slVariantElement = document.getElementsByClassName('slVariant')[0];
-            slVariantElement.innerHTML = value;
+            if(value === 'Fara'){
+                slVariantElement.innerHTML = value ;
+                slVariantElement.value=0;
+            }else {
+                slVariantElement.innerHTML = value + " <small>(+" + aromaGmMdl + " Mdl)</small>";
+                slVariantElement.value=aromaGmMdl;
+            }
         });
     }
 
     var swatchElementsColor = document.getElementsByClassName('color');
+    var colorGmMdl = (gm * 0.1)*3.5;
 
     for (var i = 0; i < swatchElementsColor.length; i++) {
         swatchElementsColor[i].addEventListener('click', function () {
             var value = this.dataset.value;
 
             var slVariantElement = document.getElementsByClassName('slVariant')[1];
-            slVariantElement.innerHTML = value;
+            if(value === 'Fara'){
+                slVariantElement.innerHTML = value ;
+                slVariantElement.value=0;
+            }else {
+                slVariantElement.innerHTML = value + " <small>(+" + colorGmMdl + " Mdl)</small>";
+                slVariantElement.value=colorGmMdl;
+            }
         });
     }
 
     var swatchElementsOptions = document.getElementsByClassName('options');
+    var optionsGmMdl = 2;
 
     for (var i = 0; i < swatchElementsOptions.length; i++) {
         swatchElementsOptions[i].addEventListener('click', function () {
             var value = this.dataset.value;
 
             var slVariantElement = document.getElementsByClassName('slVariant')[2];
-            slVariantElement.innerHTML = value;
+            if(value === 'Fara'){
+                slVariantElement.innerHTML = value ;
+                slVariantElement.value=0;
+            }else {
+                slVariantElement.innerHTML = value + " <small>(+" + optionsGmMdl + " Mdl)</small>";
+                slVariantElement.value=optionsGmMdl;
+            }
         });
     }
+
 }
 
 try {
@@ -482,4 +513,26 @@ if(window.location.pathname === "/cos-de-cumparaturi"){
     }
 
     qnt_incre();
+}
+
+function toastrSuccess(message){
+    toastr["success"](message)
+
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-left",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "100",
+        "hideDuration": "100",
+        "timeOut": "3000",
+        "extendedTimeOut": "3000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 }

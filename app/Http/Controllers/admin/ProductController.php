@@ -46,6 +46,7 @@ class ProductController extends Controller
             'sale' => 'required',
             'image' => 'required',
             'info' => 'required',
+            'grams' => 'required',
         ]);
 
         // Creează un nou obiect Product cu datele validate
@@ -63,8 +64,8 @@ class ProductController extends Controller
         $product->description_id = $request->description;
         $product->price = $request->price;
         $product->sale = $request->sale;
-//        $product->images = $request->images;
         $product->info = $request->info;
+        $product->grams = $request->grams;
         $product->images = 'images/candles/' . $newImageName;
         // Salvează noul produs în baza de date
         $product->save();
@@ -106,6 +107,7 @@ class ProductController extends Controller
             'price' => 'required',
             'sale' => 'required',
             'info' => 'required',
+            'grams' => 'required',
         ]);
 
         // Actualizează câmpurile produsului cu datele primite în request
@@ -116,6 +118,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->sale = $request->sale;
         $product->info = $request->info;
+        $product->grams = $request->grams;
 
         // Verifică dacă a fost încărcată o nouă imagine
         if ($request->hasFile('image')) {

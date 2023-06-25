@@ -57,17 +57,19 @@
                             <input name="price" type="number" class="form-control" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label class="form-label">Sale %</label>
+                            <label class="form-label">Sale </label>
                             <input name="sale" type="number" class="form-control" required>
                         </div>
-
                     </div>
                     <div class="col-sm-6">
                         <div class="input-group input-group-outline my-3">
                             <input type="file" name="image" class="form-control" required>
                         </div>
+                        <div class="input-group input-group-outline my-3">
+                            <label class="form-label">Grams</label>
+                            <input name="grams" type="number" class="form-control" required>
+                        </div>
                     </div>
-
                 </div>
 
 
@@ -108,7 +110,7 @@
             theme: 'snow'
         });
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             const quillContent = quill.root.innerHTML;
             document.getElementById('quillContent').value = quillContent;
         });
