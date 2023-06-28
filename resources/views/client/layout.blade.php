@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Primary Meta Tags -->
-    <title>AromaFlames</title>
+    <title>AromaFlames @yield('title')</title>
     <meta name="title" content="AromaFlames" />
     <meta name="description" content="AromaFlames - Lumanări personalizate handmade din ceară de soia. Arome unice și rafinate. Comandați lumanări personalizate online." />
     <meta name="keywords" content="lumanari personalizate, handmade, ceara soia, Moldova, Chisinau, arome, decoratiuni, cadouri, relaxare, experienta olfactiva, produse naturale, Online">

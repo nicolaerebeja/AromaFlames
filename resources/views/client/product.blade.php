@@ -1,4 +1,7 @@
 @extends('client.layout')
+@section('title')
+    {{$product->name}}
+@endsection
 @section('content')
     <div id="page-content">
         <!--MainContent-->
